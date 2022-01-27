@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Centric.eCommerce.Order.API.DB;
-using Centric.eCommerce.Order.API.Infrastructura;
+using Centric.eCommerce.Order.API.Infrastructure;
 using Centric.eCommerce.Order.API.Interfaces;
 using Centric.eCommerce.Order.API.Models;
 using Microsoft.EntityFrameworkCore;
