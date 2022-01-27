@@ -25,7 +25,7 @@ public class SearchService : ISearchService
 
         if (!ordersResult.IsSuccess) return (false, null);
 
-        if (ordersResult.Orders == null) 
+        if (ordersResult.Orders == null)
             return (false, null);
 
         foreach (var order in ordersResult.Orders)
@@ -43,6 +43,5 @@ public class SearchService : ISearchService
         };
 
         return (true, result);
-
     }
 }

@@ -3,7 +3,7 @@ using Centric.eCommerce.Search.API.Interfaces;
 
 namespace Centric.eCommerce.Search.API.Services;
 
-public class CustomersService: ICustomersService
+public class CustomersService : ICustomersService
 {
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly ILogger<CustomersService> _logger;
@@ -34,7 +34,6 @@ public class CustomersService: ICustomersService
             var result = JsonSerializer.Deserialize<dynamic>(content, options);
 
             return (true, result, null);
-
         }
         catch (Exception ex)
         {

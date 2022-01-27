@@ -2,6 +2,6 @@
 {
     public interface IOrdersProvider
     {
-        Task<(bool IsSuccess, IEnumerable<Models.OrderModel> Orders, string ErrorMessage)> GetOrdersAsync(Guid customerId);
+        Task<(bool IsSuccess, IEnumerable<Models.OrderModel>? Orders, string? ErrorMessage)> GetOrdersAsync(Guid customerId);
     }
 }

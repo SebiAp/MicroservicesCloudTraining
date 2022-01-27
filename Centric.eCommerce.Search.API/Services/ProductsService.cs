@@ -35,7 +35,6 @@ public class ProductsService : IProductsService
             var result = JsonSerializer.Deserialize<IEnumerable<Product>>(content, options);
 
             return (true, result, null);
-
         }
         catch (Exception ex)
         {

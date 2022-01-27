@@ -15,7 +15,8 @@ public class OrdersService : IOrdersService
         _logger = logger;
     }
 
-    public async Task<(bool IsSuccess, IEnumerable<Order>? Orders, string? ErrorMessage)> GetOrdersAsync(Guid customerId)
+    public async Task<(bool IsSuccess, IEnumerable<Order>? Orders, string? ErrorMessage)> GetOrdersAsync(
+        Guid customerId)
     {
         try
         {
@@ -35,7 +36,6 @@ public class OrdersService : IOrdersService
             var result = JsonSerializer.Deserialize<IEnumerable<Order>>(content, options);
 
             return (true, result, null);
-
         }
         catch (Exception ex)
         {
