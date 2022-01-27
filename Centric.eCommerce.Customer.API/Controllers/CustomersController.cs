@@ -16,27 +16,27 @@ namespace Centric.eCommerce.Customer.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetProductsAsync()
+        public async Task<IActionResult> GetCustomersAsync()
         {
-            var customers = await _provider.GetCustomersAsync();
-            if (customers.IsSuccess)
+            var (isSuccess, customers, errorMessage) = await _provider.GetCustomersAsync();
+            if (isSuccess)
             {
-                return Ok(customers.Customers);
+                return Ok(customers);
             }
 
-            return NotFound(customers.ErrorMessage);
+            return NotFound(errorMessage);
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetProductAsync(Guid id)
+        public async Task<IActionResult> GetCustomersAsync(Guid id)
         {
-            var customer = await _provider.GetCustomerAsync(id);
-            if (customer.IsSuccess)
+            var (isSuccess, customer, errorMessage) = await _provider.GetCustomerAsync(id);
+            if (isSuccess)
             {
-                return Ok(customer.Customer);
+                return Ok(customer);
             }
 
-            return NotFound(customer.ErrorMessage);
+            return NotFound(errorMessage);
         }
     }
 }
